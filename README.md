@@ -1,0 +1,1 @@
+Create config.json with token for the bot
