@@ -6,29 +6,22 @@ const row = new ActionRowBuilder()
 .addComponents(
 	new ButtonBuilder()
 		.setCustomId('primary')
-		.setLabel('Subscribe')
+		.setLabel('Post Offer')
 		.setStyle(ButtonStyle.Primary),
 );
 
 const embed = new EmbedBuilder()
 			.setColor(0x0099FF)
-			.setTitle('Latest News')
+			.setTitle('Latest Offer')
 			.setURL('https://homemadefood.netlify.app/')
-			.setDescription('Subscribe to the latest news');
-
-// trying emoji button instead of text button
-// const button = new ButtonBuilder()
-// 	.setCustomId('primary')
-// 	.setLabel('Primary')
-// 	.setStyle(ButtonStyle.Primary)
-// 	.setEmoji('<1026976294048637001>');
+			.setDescription('Get the latest offer from HomeMadeFood');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('news')
 		.setDescription('sign up for news'),
 	async execute(interaction) {
-		await interaction.reply({ content: 'News', ephemeral: false, embeds: [embed], components: [row], fetchReply: true });
+		await interaction.reply({ content: ' ', ephemeral: false, embeds: [embed], components: [row], fetchReply: true });
 
 	},
 };

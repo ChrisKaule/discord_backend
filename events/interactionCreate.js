@@ -35,15 +35,14 @@ module.exports = {
 							{ name: 'Address', value: json[0].address, inline: true },
 							{ name: 'Price', value: String(json[0].price) + ' $', inline: true },
 						)
-						// .addFields({ name: 'Inline field title', value: 'Some value here', inline: true })
 						.setImage(json[0].image)
 						.setTimestamp();
-						// .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+						// .setFooter({ text: 'Some footer text here', iconURL: '' });
 
 					interaction.channel.send({ embeds: [offerEmbed] });
-
-					// interaction.channel.send(`Here is the current offer: ${json[0].title}`, { files: [json[0].image] });
 				});
+
+				return interaction.deferUpdate();
 		}
 		else if (interaction.isCommand()) {
 			console.log(`${interaction.user.tag} in #${interaction.channel.name} triggered the command: ${interaction.commandName}`);
